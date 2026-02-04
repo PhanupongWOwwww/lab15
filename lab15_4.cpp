@@ -19,3 +19,23 @@ int main(){
 }
 
 //Do not modify source code above this line
+
+void shuffle(int &a, int &b, int &c, int &d){
+    int arr[4] = {a, b, c, d};
+    int used[4] = {0,0,0,0};
+    int out[4];
+
+    for(int i = 0; i < 4; i++){
+        int r;
+        do{
+            r = rand() % 4;
+        } while(used[r]);
+        used[r] = 1;
+        out[i] = arr[r];
+    }
+
+    a = out[0];
+    b = out[1];
+    c = out[2];
+    d = out[3];
+}
